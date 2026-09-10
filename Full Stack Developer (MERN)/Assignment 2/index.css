@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.header {
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+/* CARD */
+
+.card-container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h2,
+.card p {
+    margin: 15px;
+}
+
+.card h2 {
+    color: #0284c7;
+}
+
+/* BUTTON */
+
+.button {
+    background-color: #0284c7;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px 20px;
+    margin: 15px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0369a1;
+}
+
+/* FORM */
+
+.form {
+    max-width: 600px;
+
+    margin: 60px auto 20px;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.form h2 {
+    text-align: center;
+}
+
+.form input,
+.form textarea {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+.result {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 50px;
+
+    background-color: #1e293b;
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+}
