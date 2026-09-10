@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+
+function validateForm() {
+
+    // Get input values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+
+    // Get error message elements
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let successMessage = document.getElementById("successMessage");
+
+    // Clear previous messages
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    successMessage.innerHTML = "";
+
+    let isValid = true;
+
+
+    // NAME VALIDATION
+    if (name === "") {
+
+        nameError.innerHTML = "Name cannot be empty";
+        isValid = false;
+
+    } else if (!/^[A-Za-z ]+$/.test(name)) {
+
+        nameError.innerHTML =
+            "Name should contain only letters";
+        isValid = false;
+
+    } else if (name.length < 3) {
+
+        nameError.innerHTML =
+            "Name must contain at least 3 characters";
+        isValid = false;
+
+    }
+
+
+    // EMAIL VALIDATION
+    let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+
+        emailError.innerHTML = "Email cannot be empty";
+        isValid = false;
+
+    } else if (!emailPattern.test(email)) {
+
+        emailError.innerHTML =
+            "Please enter a valid email address";
+        isValid = false;
+
+    }
+
+
+    // SUCCESS MESSAGE
+    if (isValid) {
+
+        successMessage.innerHTML =
+            "Form submitted successfully!";
+
+        document.getElementById("contactForm").reset();
+
+        return false;
+    }
+
+    return false;
+}
+
+</script>
+    <title>Suman D H | Personal Portfolio</title>
+
+    <link rel="stylesheet" href="style_css_file.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">SUMAN D H</h2>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Hello, I'm <span>Suman D H</span></h1>
+
+            <h2>MCA Student | Web Development Learner</h2>
+
+            <p>
+                I am passionate about continuous learning and developing
+                technology-based projects.
+            </p>
+
+            <a href="#projects" class="btn">View My Projects</a>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-container">
+
+            <div class="about-content">
+
+                <h3>Who Am I?</h3>
+
+                <p>
+                    I am Suman D H, currently pursuing a Master of Computer
+                    Application (MCA). I am interested in web development,
+                    programming, databases, and technology-based applications.
+                </p>
+
+                <p>
+                    My technical skills include JavaScript, Java, Python,
+                    HTML, CSS, C, PHP, MySQL, Bootstrap, and HTML5.
+                </p>
+
+                <h3>Technical Skills</h3>
+
+                <div class="skills">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>C</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>Bootstrap</span>
+
+                </div>
+
+                <h3>Soft Skills</h3>
+
+                <div class="skills">
+
+                    <span>Hardworking</span>
+                    <span>Continuous Learning</span>
+                    <span>Team Player</span>
+                    <span>Time Management</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section education-section">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-container">
+
+            <!-- MCA -->
+            <div class="education-card">
+
+                <h3>Master of Computer Application (MCA)</h3>
+
+                <h4>Dr. Ambedkar Institute of Technology, Bengaluru</h4>
+
+                <p>2025 – 2027</p>
+
+                <span class="status">Pursuing</span>
+
+            </div>
+
+
+            <!-- Degree -->
+            <div class="education-card">
+
+                <h3>Bachelor of Computer Application (BCA)</h3>
+
+                <h4>Government First Grade College, Tiptur</h4>
+
+                <p>2022 – 2025</p>
+
+                <p><strong>CGPA:</strong> 7.62</p>
+
+            </div>
+
+
+            <!-- PU -->
+            <div class="education-card">
+
+                <h3>Pre-University Education</h3>
+
+                <h4>Government PU College, Tiptur</h4>
+
+                <p>EBACS | 2020 – 2022</p>
+
+                <p><strong>Percentage:</strong> 69.33%</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-container">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+
+                <div class="project-icon">🚗</div>
+
+                <h3>Wi-Fi Controlled Car</h3>
+
+                <h4>Robotic Vehicle Automation with MicroPython</h4>
+
+                <p>
+                    A robotic vehicle automation project using Wi-Fi and
+                    microcontroller technology.
+                </p>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    IoT, ESP32, Ultrasonic Distance Sensors,
+                    Infrared Sensors, Accelerometer/Gyroscope.
+                </p>
+
+                <p>
+                    <strong>Platform:</strong> Windows 11
+                </p>
+
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="project-card">
+
+                <div class="project-icon">📚</div>
+
+                <h3>Library Management System</h3>
+
+                <p>
+                    A GUI-based desktop application designed for managing
+                    library-related activities.
+                </p>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    Java Swing and Object-Oriented Programming Principles.
+                </p>
+
+                <p>
+                    <strong>Platform:</strong> Windows 11
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-container">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+
+                <h3>Get In Touch</h3>
+
+                <p><strong>Name:</strong> Suman D H</p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <a href="tel:9741936174">9741936174</a>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:sumandh04@gmail.com">
+                        sumandh04@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com/in/suman-d-h-0ab624246"
+                       target="_blank">
+                        View My LinkedIn Profile
+                    </a>
+                </p>
+
+            </div>
+
+
+          <form class="contact-form" id="contactForm" onsubmit="return validateForm()">
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+        required
+    >
+
+    <p id="nameError" class="error"></p>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+    >
+
+    <p id="emailError" class="error"></p>
+
+    <textarea
+        id="message"
+        rows="6"
+        placeholder="Enter your message"
+        required
+    ></textarea>
+
+    <button type="submit">Send Message</button>
+
+    <p id="successMessage"></p>
+
+</form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>Suman D H</h3>
+
+        <p>Personal Portfolio Website</p>
+
+        <p>© 2026 All Rights Reserved</p>
+
+    </footer>
+
+</body>
+</html>
