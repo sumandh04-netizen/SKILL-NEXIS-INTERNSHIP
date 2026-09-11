@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to React",
+    "description": "Learn the fundamentals of React and modern component-based web development.",
+    "category": "React",
+    "author": "Suman D H",
+    "courseInformation": "This beginner-friendly course introduces React and its important concepts.",
+    "chapters": [
+      {
+        "chapterName": "Chapter 1: Introduction to React",
+        "note": "Learn what React is, why it is used, and how to create a React application."
+      },
+      {
+        "chapterName": "Chapter 2: JSX and Components",
+        "note": "Understand JSX syntax and learn how to create reusable React components."
+      },
+      {
+        "chapterName": "Chapter 3: Props and State",
+        "note": "Learn how props pass data between components and how state manages dynamic data."
+      },
+      {
+        "chapterName": "Chapter 4: Events",
+        "note": "Learn how to handle user events such as clicks, input changes, and form submissions."
+      }
+    ],
+    "courseOutcome": [
+      "Understand the fundamentals of React.",
+      "Create reusable React components.",
+      "Use JSX, props, and state.",
+      "Build interactive React applications."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "HTML5 Semantic Elements",
+    "description": "Understand modern HTML semantic elements and proper webpage structure.",
+    "category": "HTML",
+    "author": "Suman D H",
+    "courseInformation": "This course teaches semantic HTML elements used to create meaningful and well-structured webpages.",
+    "chapters": [
+      {
+        "chapterName": "Chapter 1: Introduction to HTML5",
+        "note": "Learn the basic structure of an HTML5 document."
+      },
+      {
+        "chapterName": "Chapter 2: Semantic Elements",
+        "note": "Learn header, nav, main, section, article, aside, and footer elements."
+      },
+      {
+        "chapterName": "Chapter 3: Forms and Media",
+        "note": "Learn modern HTML forms, audio, video, and other media elements."
+      }
+    ],
+    "courseOutcome": [
+      "Create structured HTML5 webpages.",
+      "Understand semantic HTML elements.",
+      "Build accessible web content."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "CSS Responsive Design",
+    "description": "Learn responsive web design using modern CSS techniques.",
+    "category": "CSS",
+    "author": "Suman D H",
+    "courseInformation": "This course teaches how to design websites that work properly on desktop, tablet, and mobile devices.",
+    "chapters": [
+      {
+        "chapterName": "Chapter 1: CSS Fundamentals",
+        "note": "Learn selectors, colors, fonts, spacing, and the CSS box model."
+      },
+      {
+        "chapterName": "Chapter 2: Flexbox",
+        "note": "Learn how to create flexible layouts using CSS Flexbox."
+      },
+      {
+        "chapterName": "Chapter 3: CSS Grid",
+        "note": "Learn how to build two-dimensional responsive layouts."
+      },
+      {
+        "chapterName": "Chapter 4: Media Queries",
+        "note": "Learn how to make websites responsive for different screen sizes."
+      }
+    ],
+    "courseOutcome": [
+      "Create responsive websites.",
+      "Use Flexbox and CSS Grid.",
+      "Use media queries for mobile devices."
+    ]
+  }
+]
