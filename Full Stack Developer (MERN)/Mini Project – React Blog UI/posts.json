@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to React",
+    "description": "Learn the fundamentals of React.",
+    "category": "React",
+    "author": "Suman D H"
+  },
+  {
+    "id": 2,
+    "title": "HTML5 Semantic Elements",
+    "description": "Understand HTML semantic elements.",
+    "category": "HTML",
+    "author": "Suman D H"
+  },
+  {
+    "id": 3,
+    "title": "CSS Responsive Design",
+    "description": "Learn responsive web design using CSS.",
+    "category": "CSS",
+    "author": "Suman D H"
+  },
+  {
+    "id": 4,
+    "title": "JavaScript ES6 Basics",
+    "description": "Learn modern JavaScript concepts.",
+    "category": "JavaScript",
+    "author": "Suman D H"
+  }
+]
