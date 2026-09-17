@@ -1,0 +1,6 @@
+Skill Nexis Internship - Assignment 1
+Author: Suman D H
+Internship ID: Not provided in supplied offer letter
+Date: 17/09/2026
+Assignment: To-Do List REST API
+Stack: Node.js, Express, MongoDB, Mongoose, Postman
