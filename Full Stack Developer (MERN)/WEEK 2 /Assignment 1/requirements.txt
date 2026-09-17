@@ -1,0 +1,14 @@
+Node.js dependencies for Assignment 1
+--------------------------------------
+express
+mongoose
+cors
+dotenv
+
+Development dependency:
+nodemon
+
+Recommended runtime:
+Node.js 18+ and MongoDB 6+
+Testing:
+Postman
