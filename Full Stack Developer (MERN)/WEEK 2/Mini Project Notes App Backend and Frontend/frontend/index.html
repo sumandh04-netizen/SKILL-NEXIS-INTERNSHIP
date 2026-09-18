@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Notes</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="paper-background"></div>
+
+<header class="header">
+
+    <div class="logo">
+        📖 Smart Notes
+    </div>
+
+    <div class="header-actions">
+
+        <button
+            id="themeBtn"
+            class="icon-btn"
+            onclick="toggleTheme()"
+        >
+            🌙
+        </button>
+
+        <button
+            id="logoutBtn"
+            class="logout-btn hidden"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================================================= -->
+<!-- HOME -->
+<!-- ================================================= -->
+
+<main
+    id="homePage"
+    class="home-page"
+>
+
+    <section class="hero-card">
+
+        <div class="book-icon">
+            📚
+        </div>
+
+        <h1>
+            Smart Notes
+        </h1>
+
+        <p>
+            Your beautiful digital paper notebook.
+            Write, organize, search and protect your ideas.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="openRegister()"
+            >
+                ✨ Register
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="openLogin()"
+            >
+                🔐 Login
+            </button>
+
+        </div>
+
+        <div class="feature-list">
+
+            <span>✍️ Rich Text</span>
+            <span>📌 Pin</span>
+            <span>🏷️ Tags</span>
+            <span>🔒 Lock</span>
+            <span>🎤 Voice</span>
+            <span>📄 PDF</span>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================================================= -->
+<!-- NOTES DASHBOARD -->
+<!-- ================================================= -->
+
+<main
+    id="notesPage"
+    class="notes-page hidden"
+>
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>
+                📖 My Notebook
+            </h1>
+
+            <p id="welcomeText">
+                Your personal notes
+            </p>
+
+        </div>
+
+        <button
+            class="add-btn"
+            onclick="openAddNote()"
+        >
+            ＋ New Note
+        </button>
+
+    </div>
+
+
+    <div class="toolbar">
+
+        <div class="search-box">
+
+            🔎
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search notes, tags or content..."
+                oninput="searchNotes()"
+            >
+
+        </div>
+
+        <div class="view-buttons">
+
+            <button
+                onclick="setView('active')"
+            >
+                📒 Notes
+            </button>
+
+            <button
+                onclick="setView('archive')"
+            >
+                🗃️ Archive
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="notesContainer"
+        class="notes-grid"
+    ></div>
+
+
+    <div
+        id="emptyMessage"
+        class="empty-message hidden"
+    >
+
+        <div>
+            📚
+        </div>
+
+        <h2>
+            No Notes Found
+        </h2>
+
+        <p>
+            Create your first note.
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- ================================================= -->
+<!-- REGISTER -->
+<!-- ================================================= -->
+
+<div
+    id="registerModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closeModals()"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            ✨
+        </div>
+
+        <h2>
+            Create Account
+        </h2>
+
+        <p class="modal-subtitle">
+            Start your Smart Notes notebook
+        </p>
+
+        <form onsubmit="registerUser(event)">
+
+            <label>
+                Name
+
+                <input
+                    id="registerName"
+                    required
+                    placeholder="Your name"
+                >
+
+            </label>
+
+
+            <label>
+                Email
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                >
+
+            </label>
+
+
+            <label>
+                Password
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    minlength="6"
+                    required
+                    placeholder="Minimum 6 characters"
+                >
+
+            </label>
+
+
+            <button
+                class="modal-primary-btn"
+                type="submit"
+            >
+                Register
+            </button>
+
+        </form>
+
+
+        <p class="switch-text">
+
+            Already have an account?
+
+            <button onclick="switchToLogin()">
+                Login
+            </button>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- LOGIN -->
+<!-- ================================================= -->
+
+<div
+    id="loginModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closeModals()"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            🔐
+        </div>
+
+        <h2>
+            Welcome Back
+        </h2>
+
+        <p class="modal-subtitle">
+            Login to your notebook
+        </p>
+
+
+        <form onsubmit="loginUser(event)">
+
+            <label>
+                Email
+
+                <input
+                    id="loginEmail"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                >
+
+            </label>
+
+
+            <label>
+                Password
+
+                <input
+                    id="loginPassword"
+                    type="password"
+                    required
+                    placeholder="Your password"
+                >
+
+            </label>
+
+
+            <button
+                class="modal-primary-btn"
+                type="submit"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <p class="switch-text">
+
+            New user?
+
+            <button onclick="switchToRegister()">
+                Register
+            </button>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- NOTE EDITOR -->
+<!-- ================================================= -->
+
+<div
+    id="noteModal"
+    class="modal"
+>
+
+    <div class="modal-box editor-modal">
+
+        <button
+            class="close-btn"
+            onclick="closeModals()"
+        >
+            ×
+        </button>
+
+        <h2 id="noteModalTitle">
+            📝 New Note
+        </h2>
+
+
+        <!-- Rich Text Toolbar -->
+
+        <div class="format-toolbar">
+
+            <button onclick="format('bold')">
+                <b>B</b>
+            </button>
+
+            <button onclick="format('italic')">
+                <i>I</i>
+            </button>
+
+            <button onclick="format('underline')">
+                <u>U</u>
+            </button>
+
+            <button onclick="format('strikeThrough')">
+                <s>S</s>
+            </button>
+
+            <select onchange="changeHeading(this.value)">
+
+                <option value="">
+                    Heading
+                </option>
+
+                <option value="h1">
+                    H1
+                </option>
+
+                <option value="h2">
+                    H2
+                </option>
+
+                <option value="h3">
+                    H3
+                </option>
+
+            </select>
+
+            <button onclick="format('formatBlock','blockquote')">
+                ❝
+            </button>
+
+            <button onclick="format('formatBlock','pre')">
+                &lt;/&gt;
+            </button>
+
+            <button onclick="highlightText()">
+                🖍️
+            </button>
+
+            <input
+                id="textColor"
+                type="color"
+                onchange="changeTextColor(this.value)"
+                title="Text color"
+            >
+
+            <button onclick="createChecklist()">
+                ☑
+            </button>
+
+        </div>
+
+
+        <label>
+            Title
+
+            <input
+                id="noteTitle"
+                required
+                placeholder="Note title"
+            >
+
+        </label>
+
+
+        <div class="editor-label">
+            Content
+        </div>
+
+
+        <div
+            id="noteContent"
+            class="rich-editor"
+            contenteditable="true"
+            data-placeholder="Write your note..."
+            oninput="autoSaveIndicator()"
+        ></div>
+
+
+        <!-- Tools -->
+
+        <div class="editor-tools">
+
+            <button onclick="startVoice()">
+                🎤 Voice to Note
+            </button>
+
+            <button onclick="openDrawing()">
+                🎨 Drawing
+            </button>
+
+            <button onclick="convertMarkdown()">
+                # Markdown
+            </button>
+
+            <label class="file-btn">
+
+                📄 Upload PDF
+
+                <input
+                    id="pdfInput"
+                    type="file"
+                    accept=".pdf"
+                    onchange="uploadPDF()"
+                    hidden
+                >
+
+            </label>
+
+        </div>
+
+
+        <!-- Options -->
+
+        <div class="editor-options">
+
+            <label>
+
+                Sticky Color
+
+                <select id="noteColor">
+
+                    <option value="yellow">
+                        🟡 Yellow
+                    </option>
+
+                    <option value="pink">
+                        🩷 Pink
+                    </option>
+
+                    <option value="blue">
+                        🔵 Blue
+                    </option>
+
+                    <option value="green">
+                        🟢 Green
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Tags
+
+                <input
+                    id="noteTags"
+                    placeholder="study, project, important"
+                >
+
+            </label>
+
+
+            <label>
+
+                Reminder
+
+                <input
+                    id="noteReminder"
+                    type="datetime-local"
+                >
+
+            </label>
+
+        </div>
+
+
+        <div
+            id="autoSave"
+            class="autosave"
+        >
+            ✓ Ready
+        </div>
+
+
+        <div
+            id="pdfStatus"
+            class="status-text"
+        ></div>
+
+
+        <div class="note-form-buttons">
+
+            <button
+                class="cancel-btn"
+                onclick="closeModals()"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="lock-btn"
+                onclick="lockCurrentNote()"
+            >
+                🔒 Lock
+            </button>
+
+            <button
+                id="saveNoteBtn"
+                class="modal-primary-btn"
+                onclick="saveNote(event)"
+            >
+                Save Note
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- DELETE / TRASH -->
+<!-- ================================================= -->
+
+<div
+    id="deleteModal"
+    class="modal"
+>
+
+    <div class="modal-box delete-box">
+
+        <div class="delete-icon">
+            🗑️
+        </div>
+
+        <h2>
+            Move to Trash?
+        </h2>
+
+        <p>
+            The note will be moved to Archive.
+            You can restore it later.
+        </p>
+
+        <div class="delete-buttons">
+
+            <button
+                class="cancel-btn"
+                onclick="closeModals()"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="delete-confirm-btn"
+                onclick="confirmDelete()"
+            >
+                Move to Trash
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- UNLOCK -->
+<!-- ================================================= -->
+
+<div
+    id="unlockModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closeModals()"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            🔒
+        </div>
+
+        <h2>
+            Locked Note
+        </h2>
+
+        <p class="modal-subtitle">
+            Enter your note password
+        </p>
+
+        <input
+            id="unlockPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button
+            class="modal-primary-btn"
+            onclick="unlockNote()"
+        >
+            🔓 Unlock
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- DRAWING -->
+<!-- ================================================= -->
+
+<div
+    id="drawModal"
+    class="modal"
+>
+
+    <div class="modal-box drawing-box">
+
+        <button
+            class="close-btn"
+            onclick="closeModals()"
+        >
+            ×
+        </button>
+
+        <h2>
+            🎨 Draw Inside Note
+        </h2>
+
+        <canvas
+            id="drawCanvas"
+            width="600"
+            height="350"
+        ></canvas>
+
+        <div class="note-form-buttons">
+
+            <button
+                class="cancel-btn"
+                onclick="clearCanvas()"
+            >
+                Clear
+            </button>
+
+            <button
+                class="modal-primary-btn"
+                onclick="insertDrawing()"
+            >
+                Insert Drawing
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Toast -->
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
