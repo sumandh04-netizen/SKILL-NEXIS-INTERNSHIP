@@ -1,0 +1,43 @@
+{
+  "info": {
+    "name": "To-Do List REST API - Skill Nexis Assignment 1",
+    "_postman_id": "todo-skillnexis-assignment-1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:5000"},
+    {"key": "taskId", "value": "REPLACE_WITH_CREATED_TASK_ID"}
+  ],
+  "item": [
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"title\": \"Complete internship assignment\",\n  \"description\": \"Build and test the To-Do REST API\",\n  \"completed\": false\n}"},
+        "url": {"raw": "{{baseUrl}}/api/tasks", "host": ["{{baseUrl}}"], "path": ["api","tasks"]}
+      }
+    },
+    {
+      "name": "Get All Tasks",
+      "request": {"method": "GET", "url": {"raw": "{{baseUrl}}/api/tasks", "host": ["{{baseUrl}}"], "path": ["api","tasks"]}}
+    },
+    {
+      "name": "Get Task By ID",
+      "request": {"method": "GET", "url": {"raw": "{{baseUrl}}/api/tasks/{{taskId}}", "host": ["{{baseUrl}}"], "path": ["api","tasks","{{taskId}}"]}}
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"title\": \"Complete internship assignment - updated\",\n  \"description\": \"REST API tested successfully in Postman\",\n  \"completed\": true\n}"},
+        "url": {"raw": "{{baseUrl}}/api/tasks/{{taskId}}", "host": ["{{baseUrl}}"], "path": ["api","tasks","{{taskId}}"]}
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {"method": "DELETE", "url": {"raw": "{{baseUrl}}/api/tasks/{{taskId}}", "host": ["{{baseUrl}}"], "path": ["api","tasks","{{taskId}}"]}}
+    }
+  ]
+}
