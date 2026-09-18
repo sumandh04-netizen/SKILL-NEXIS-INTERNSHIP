@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 15px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #444;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #667eea;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #667eea;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #5568d8;
+}
+
+.switch {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.link-button {
+    border: none;
+    background: none;
+    color: #667eea;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.profile {
+    background: #f5f6fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-item {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 5px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-item strong {
+    color: #444;
+}
+
+.profile-item span {
+    color: #667eea;
+}
+
+.logout-button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #e74c3c;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background: #c0392b;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 500px) {
+
+    .card {
+        padding: 22px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+}

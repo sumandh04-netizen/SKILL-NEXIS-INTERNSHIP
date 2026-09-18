@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>User Authentication</h1>
+            <p>Secure Login & Registration System</p>
+        </div>
+
+        <!-- Register Section -->
+        <div class="card" id="registerCard">
+
+            <h2>Create Account</h2>
+
+            <form id="registerForm">
+
+                <div class="input-group">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Minimum 6 characters"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <p id="registerMessage" class="message"></p>
+
+            <p class="switch">
+                Already have an account?
+                <button class="link-button" onclick="showLogin()">
+                    Login
+                </button>
+            </p>
+
+        </div>
+
+
+        <!-- Login Section -->
+        <div class="card hidden" id="loginCard">
+
+            <h2>Login</h2>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="loginMessage" class="message"></p>
+
+            <p class="switch">
+                Don't have an account?
+                <button class="link-button" onclick="showRegister()">
+                    Register
+                </button>
+            </p>
+
+        </div>
+
+
+        <!-- Profile Section -->
+        <div class="card hidden" id="profileCard">
+
+            <h2>Welcome 👋</h2>
+
+            <div class="profile">
+
+                <div class="profile-item">
+                    <strong>Name</strong>
+                    <span id="profileName"></span>
+                </div>
+
+                <div class="profile-item">
+                    <strong>Email</strong>
+                    <span id="profileEmail"></span>
+                </div>
+
+            </div>
+
+            <p id="profileMessage" class="message"></p>
+
+            <button class="logout-button" onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

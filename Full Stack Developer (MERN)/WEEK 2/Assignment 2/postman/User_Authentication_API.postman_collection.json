@@ -1,0 +1,87 @@
+{
+    "info": {
+        "name": "User Authentication API",
+        "description": "Postman collection for User Authentication API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://127.0.0.1:5000"
+        },
+        {
+            "key": "token",
+            "value": ""
+        }
+    ],
+
+    "item": [
+
+        {
+            "name": "Home",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/"
+            }
+        },
+
+        {
+            "name": "Register User",
+            "request": {
+                "method": "POST",
+
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Suman\",\n    \"email\": \"suman@gmail.com\",\n    \"password\": \"password123\"\n}"
+                },
+
+                "url": "{{baseUrl}}/register"
+            }
+        },
+
+        {
+            "name": "Login User",
+            "request": {
+                "method": "POST",
+
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"suman@gmail.com\",\n    \"password\": \"password123\"\n}"
+                },
+
+                "url": "{{baseUrl}}/login"
+            }
+        },
+
+        {
+            "name": "Protected Profile",
+            "request": {
+                "method": "GET",
+
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+
+                "url": "{{baseUrl}}/profile"
+            }
+        }
+    ]
+}
