@@ -1,91 +1,56 @@
-Assignment 2: Image Upload Feature
+# Assignment 2: Image Upload Feature
 
-A full-stack image upload application developed as part of the Full Stack Developer Intern (MERN Stack) internship at Skill Nexis.
+A full-stack image upload application developed as part of the **Full Stack Developer Intern (MERN Stack)** internship at **Skill Nexis**.
 
-Internship Information
+## Internship Information
 
-Detail
-
-Information
-
-Organization
-
-Skill Nexis
-
-Internship Domain
-
-Full Stack Developer Intern (MERN Stack)
-
-Internship Type
-
-Online Internship
-
-Intern
-
-Suman D H
-
-Start Date
-
-28/08/2026
-
-End Date
-
-09/10/2026
+| Detail | Information |
+|---|---|
+| Organization | Skill Nexis |
+| Internship Domain | Full Stack Developer Intern (MERN Stack) |
+| Internship Type | Online Internship |
+| Intern | Suman D H |
+| Start Date | 28/08/2026 |
+| End Date | 09/10/2026 |
 
 The internship offer letter states that the internship involves assigned projects and tasks to be completed within deadlines, with the aim of enhancing practical knowledge and hands-on experience.
 
-Assignment Requirements
+## Assignment Requirements
 
-Create a file upload endpoint using Multer.
+- Create a file upload endpoint using **Multer**.
+- Integrate the upload functionality with **React**.
+- Preview the selected image before uploading.
+- Display the uploaded image after successful upload.
 
-Integrate the upload functionality with React.
+## Project Overview
 
-Preview the selected image before uploading.
+The application allows a user to select an image, preview it in React, upload it to an Express.js backend using Multer, store it in the server's `uploads` folder, and display the uploaded image.
 
-Display the uploaded image after successful upload.
+## Technologies Used
 
-Project Overview
+### Frontend
+- React.js
+- Vite
+- JavaScript
+- HTML5
+- CSS3
 
-The application allows a user to select an image, preview it in React, upload it to an Express.js backend using Multer, store it in the server's uploads folder, and display the uploaded image.
+### Backend
+- Node.js
+- Express.js
+- Multer
+- CORS
 
-Technologies Used
+### Tools
+- Visual Studio Code
+- Git
+- GitHub
+- Command Prompt
+- Web Browser
 
-Frontend
+## Project Structure
 
-React.js
-
-Vite
-
-JavaScript
-
-HTML5
-
-CSS3
-
-Backend
-
-Node.js
-
-Express.js
-
-Multer
-
-CORS
-
-Tools
-
-Visual Studio Code
-
-Git
-
-GitHub
-
-Command Prompt
-
-Web Browser
-
-Project Structure
-
+```text
 image-upload/
 │
 ├── backend/
@@ -109,9 +74,11 @@ image-upload/
 │   └── vite.config.js
 │
 └── README.md
+```
 
-Application Flow
+## Application Flow
 
+```text
 User selects image
        |
        v
@@ -132,136 +99,155 @@ Uploaded Image URL
        |
        v
 React displays uploaded image
+```
 
-Backend Setup
+## Backend Setup
 
+```cmd
 cd backend
 npm init -y
 npm install express multer cors
 mkdir uploads
+```
 
-Backend API
+## Backend API
 
-Upload Endpoint
+### Upload Endpoint
 
+```text
 POST /api/upload
+```
 
 Local URL:
 
+```text
 http://localhost:5000/api/upload
+```
 
 The image must be sent using the form-data field:
 
+```text
 image
+```
 
-Supported Image Types
+### Supported Image Types
 
-JPG
-
-JPEG
-
-PNG
-
-GIF
-
-WEBP
+- JPG
+- JPEG
+- PNG
+- GIF
+- WEBP
 
 Maximum file size:
 
+```text
 5 MB
+```
 
-Running the Backend
+## Running the Backend
 
+```cmd
 cd "C:\Users\suman\Desktop\React\FULL STACK WEB DEVELOPMENT (MERN)\image-upload\backend"
 node server.js
+```
 
 Expected:
 
+```text
 Server running on http://localhost:5000
+```
 
 Test:
 
+```text
 http://localhost:5000/
+```
 
 Expected response:
 
+```json
 {
   "message": "Image Upload API is running"
 }
+```
 
-Frontend Setup
+## Frontend Setup
 
+```cmd
 cd "C:\Users\suman\Desktop\React\FULL STACK WEB DEVELOPMENT (MERN)\image-upload\frontend"
 npm install
 npm run dev
+```
 
 Vite will display the local URL, normally:
 
+```text
 http://localhost:5173/
+```
 
-Main Features
+## Main Features
 
-1. Select Image
-
+### 1. Select Image
 The user selects an image from the computer.
 
-2. Image Preview
-
+### 2. Image Preview
 React previews the selected image before upload using:
 
+```javascript
 URL.createObjectURL(file)
+```
 
-3. Upload Image
+### 3. Upload Image
+The selected image is sent using `FormData`:
 
-The selected image is sent using FormData:
-
+```javascript
 const formData = new FormData();
 formData.append("image", selectedFile);
+```
 
-4. Multer Processing
-
+### 4. Multer Processing
 Multer receives the image and stores it in:
 
+```text
 backend/uploads/
+```
 
-5. Display Uploaded Image
-
+### 5. Display Uploaded Image
 The backend returns the uploaded image URL, which React uses to display the image.
 
-Testing
+## Testing
 
-Backend Test
+### Backend Test
 
 Open:
 
+```text
 http://localhost:5000/
+```
 
 Expected:
 
+```json
 {
   "message": "Image Upload API is running"
 }
+```
 
-Frontend Test
+### Frontend Test
 
 Open the Vite URL and:
 
-Click Choose File.
+1. Click **Choose File**.
+2. Select an image.
+3. Verify **Image Preview**.
+4. Click **Upload Image**.
+5. Verify the success message.
+6. Verify the uploaded image is displayed.
+7. Check `backend/uploads/` for the uploaded file.
 
-Select an image.
+## Expected Interface
 
-Verify Image Preview.
-
-Click Upload Image.
-
-Verify the success message.
-
-Verify the uploaded image is displayed.
-
-Check backend/uploads/ for the uploaded file.
-
-Expected Interface
-
+```text
 +---------------------------------------+
 |       Image Upload Application        |
 |                                       |
@@ -284,53 +270,44 @@ Expected Interface
 |        |      IMAGE        |          |
 |        +-------------------+          |
 +---------------------------------------+
+```
 
-Learning Outcomes
+## Learning Outcomes
 
 This assignment demonstrates practical experience with:
 
-React file handling
+- React file handling
+- Image preview
+- FormData
+- REST API integration
+- Express.js
+- Multer
+- File storage
+- CORS
+- Node.js
+- Frontend-backend communication
+- GitHub documentation
 
-Image preview
+## Internship Offer Letter
 
-FormData
+The uploaded internship offer letter is dated **28/08/2026** and is addressed to **Suman D H**. It offers an online internship with **Skill Nexis** in the domain of **Full Stack Developer Intern (MERN Stack)**, commencing **28/08/2026** and ending **09/10/2026**. The letter states that the intern will work on assigned projects and complete tasks within deadlines to enhance practical knowledge and hands-on experience. 
 
-REST API integration
+The offer letter is signed by **Rakesh Soni, AICTE & MSME REG., Founder & Program Head**.
 
-Express.js
-
-Multer
-
-File storage
-
-CORS
-
-Node.js
-
-Frontend-backend communication
-
-GitHub documentation
-
-Internship Offer Letter
-
-The uploaded internship offer letter is dated 28/08/2026 and is addressed to Suman D H. It offers an online internship with Skill Nexis in the domain of Full Stack Developer Intern (MERN Stack), commencing 28/08/2026 and ending 09/10/2026. The letter states that the intern will work on assigned projects and complete tasks within deadlines to enhance practical knowledge and hands-on experience.
-
-The offer letter is signed by Rakesh Soni, AICTE & MSME REG., Founder & Program Head.
-
-Offer Letter Documentation
+## Offer Letter Documentation
 
 Keep the original internship offer letter with the project documentation when submitting the internship work.
 
-Offer Letter: Skill Nexis — Internship Offer Letter dated 28/08/2026.
+**Offer Letter:** Skill Nexis — Internship Offer Letter dated 28/08/2026.
 
-Author
+## Author
 
-Suman D H
+**Suman D H**
 
-Full Stack Developer Intern
-Skill Nexis
+Full Stack Developer Intern  
+Skill Nexis  
 Internship Period: 28/08/2026 – 09/10/2026
 
-Conclusion
+## Conclusion
 
 The Image Upload Feature demonstrates how a React frontend communicates with an Express.js backend to upload images using Multer. The application provides image selection, client-side preview, server-side upload, file storage, and display of the uploaded image.
