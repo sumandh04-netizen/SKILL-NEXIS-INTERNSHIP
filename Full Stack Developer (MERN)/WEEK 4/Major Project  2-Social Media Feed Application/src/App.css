@@ -1,0 +1,45 @@
+:root{--bg:#f5f8ff}textarea::placeholder,input::placeholder{color:#93a0ba}.profile-header .primary-btn{margin-top:16px}.chat-header b{font-size:13px}.chart-card h3{margin-top:0}.auth-page a{color:#4261ee;font-weight:700}.brand:focus-visible,.nav-item:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #7a5af0;outline-offset:2px}
+
+.error-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #eef3ff, #ffffff);
+}
+
+.error-screen-card {
+  width: min(520px, 100%);
+  padding: 32px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dbe5f5;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(35, 62, 130, 0.12);
+}
+
+.brand-mark.large {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+}
+
+.error-screen-card h1 {
+  margin: 0 0 10px;
+}
+
+.error-screen-card p {
+  color: #7080a4;
+  line-height: 1.6;
+}
+
+.error-screen-card pre {
+  margin-top: 20px;
+  padding: 12px;
+  overflow: auto;
+  text-align: left;
+  border-radius: 10px;
+  background: #f5f7fb;
+  color: #8b2940;
+  font-size: 12px;
+}

@@ -1,0 +1,11 @@
+import { Router } from "express";
+import { auth } from "../middleware/auth.js";
+import { me, getProfile, updateProfile, searchUsers, follow, unfollow } from "../controllers/userController.js";
+const router = Router();
+router.get("/me", auth, me);
+router.get("/search", auth, searchUsers);
+router.get("/:username", auth, getProfile);
+router.put("/me", auth, updateProfile);
+router.post("/:id/follow", auth, follow);
+router.delete("/:id/follow", auth, unfollow);
+export default router;

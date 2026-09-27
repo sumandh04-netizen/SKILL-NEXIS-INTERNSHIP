@@ -1,0 +1,11 @@
+import { Router } from "express";
+import { auth, roles } from "../middleware/auth.js";
+import { dashboard, users, updateUser, reports, resolveReport } from "../controllers/adminController.js";
+const router = Router();
+router.use(auth, roles("admin", "moderator"));
+router.get("/", dashboard);
+router.get("/users", users);
+router.put("/users/:id", updateUser);
+router.get("/reports", reports);
+router.put("/reports/:id", resolveReport);
+export default router;
