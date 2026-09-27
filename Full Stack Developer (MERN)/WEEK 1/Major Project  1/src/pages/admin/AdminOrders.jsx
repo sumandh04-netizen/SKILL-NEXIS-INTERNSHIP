@@ -1,7 +1,0 @@
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import api from "../../api/api";
-import { formatPrice } from "../../utils/formatPrice";
-
-const statuses=["Pending","Confirmed","Processing","Shipped","Delivered","Cancelled"];
-export default function AdminOrders(){const[orders,setOrders]=useState([]);const load=()=>api.get("/admin/orders").then(r=>setOrders(r.data));useEffect(()=>{load();},[]);async function update(id,status){try{await api.put(`/admin/orders/${id}/status`,{status});toast.success("Order updated");load();}catch(e){toast.error(e.response?.data?.message||"Update failed");}}return <main className="page-shell py-10"><span className="eyebrow">Admin</span><h1 className="page-title">Orders</h1><div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"><table className="w-full min-w-[850px] text-left text-sm"><thead className="bg-slate-50 dark:bg-slate-800"><tr><th className="p-4">Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Update</th></tr></thead><tbody>{orders.map(o=><tr key={o._id} className="border-t dark:border-slate-800"><td className="p-4 font-bold">#{o._id.slice(-8).toUpperCase()}</td><td>{o.user?.name}<div className="text-xs text-slate-400">{o.user?.email}</div></td><td>{formatPrice(o.total)}</td><td>{o.status}</td><td><select value={o.status} onChange={e=>update(o._id,e.target.value)} className="input w-auto">{statuses.map(s=><option key={s}>{s}</option>)}</select></td></tr>)}</tbody></table></div></main>}
