@@ -1,0 +1,421 @@
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-page {
+  width: 100%;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.dashboard-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chart-panel,
+.progress-panel,
+.dashboard-member-panel {
+  min-width: 0;
+}
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
+.panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panel-head h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+}
+
+.panel-head p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.dashboard-panel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-panel .panel-head {
+  width: 100%;
+}
+
+.progress-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 190px;
+  margin: 15px auto 18px;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      var(--accent) var(--progress),
+      var(--surface-2) var(--progress)
+    );
+}
+
+.progress-ring::before {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.progress-ring > div {
+  position: relative;
+  z-index: 1;
+  color: var(--text);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.dashboard-progress-info {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.dashboard-progress-info strong {
+  color: var(--text);
+  font-size: 17px;
+}
+
+.dashboard-progress-info span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.center {
+  width: 100%;
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* =========================================================
+   MEMBER CHART
+========================================================= */
+
+.dashboard-member-panel {
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.dashboard-empty-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.dashboard-empty-chart svg {
+  margin-bottom: 10px;
+  color: var(--accent);
+  opacity: 0.55;
+}
+
+.dashboard-empty-chart p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.dashboard-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dashboard-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 80px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--surface);
+}
+
+.dashboard-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.dashboard-summary-card span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.dashboard-summary-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.dashboard-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.dashboard-error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.dashboard-error h2 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.dashboard-error p {
+  margin: 0 0 15px;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.dashboard-loading-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-chart-skeleton {
+  min-height: 350px;
+}
+
+.dashboard-progress-skeleton {
+  min-height: 350px;
+}
+
+.skeleton-grid .skeleton {
+  min-height: 105px;
+}
+
+.skeleton,
+.task-skeleton {
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    var(--surface) 50%,
+    var(--surface-2) 75%
+  );
+  background-size: 200% 100%;
+  animation: dashboardSkeleton 1.5s infinite;
+}
+
+@keyframes dashboardSkeleton {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.dashboard-spin {
+  animation: dashboardSpin 0.8s linear infinite;
+}
+
+@keyframes dashboardSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .metric-grid,
+  .dashboard-summary-grid {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard-header-actions {
+    width: 100%;
+  }
+
+  .dashboard-header-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .dashboard-grid,
+  .dashboard-loading-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .metric-grid,
+  .dashboard-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashboard-header-actions button {
+    width: 100%;
+  }
+
+  .dashboard-error {
+    flex-direction: column;
+  }
+
+  .progress-ring {
+    width: 170px;
+    height: 170px;
+  }
+
+  .progress-ring::before {
+    width: 130px;
+    height: 130px;
+  }
+
+  .progress-ring > div {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-header-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header-actions button {
+    width: 100%;
+  }
+}

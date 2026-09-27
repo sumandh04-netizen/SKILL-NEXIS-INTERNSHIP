@@ -1,0 +1,222 @@
+/* =========================================================
+   SETTINGS PAGE
+========================================================= */
+
+.settings-page {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.settings-page-header {
+  margin-bottom: 24px;
+}
+
+.settings-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   SETTINGS CARD
+========================================================= */
+
+.settings-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  min-width: 0;
+}
+
+.settings-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.settings-card h2 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.settings-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CURRENT THEME
+========================================================= */
+
+.settings-current-theme {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.settings-current-theme svg {
+  color: #22c55e;
+}
+
+.settings-current-theme strong {
+  color: var(--text);
+}
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.settings-theme-button {
+  flex-shrink: 0;
+}
+
+.settings-theme-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.settings-profile-content {
+  min-width: 0;
+}
+
+.settings-user-name {
+  margin-bottom: 3px !important;
+  color: var(--text) !important;
+  font-weight: 700;
+}
+
+.settings-profile-content small {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.settings-security {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 10px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: #22c55e;
+  background: var(--surface-2);
+}
+
+.settings-security strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text);
+  font-size: 11px;
+}
+
+.settings-security span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+/* =========================================================
+   WORKSPACE INFO
+========================================================= */
+
+.settings-info-card {
+  margin-top: 8px;
+}
+
+.settings-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.settings-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .settings-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .settings-theme-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .settings-security {
+    width: 100%;
+  }
+
+  .settings-status {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-card {
+    padding: 17px;
+  }
+
+  .settings-card-content {
+    gap: 11px;
+  }
+
+  .settings-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .settings-security {
+    align-items: flex-start;
+  }
+}
